@@ -94,21 +94,15 @@ h1 {
   max-width: 60ch;
 }
 
-/* ===== GALLERY LAYOUT ===== */
+/* Gallery — single vertical scroll */
 .gallery {
   max-width: var(--max);
   margin: 0 auto;
   padding: 24px 16px 40px;
-
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
 }
 
-/* First and last images full width */
-.gallery .item:first-child,
-.gallery .item:last-child {
-  grid-column: 1 / -1;
+.item {
+  margin-bottom: 34px;
 }
 
 .item img {
@@ -120,16 +114,9 @@ h1 {
   background: #fafafa;
 }
 
-/* Hide captions for clean portfolio look */
+/* Hide captions for clean portfolio */
 figcaption {
   display: none;
-}
-
-/* Mobile: single column */
-@media (max-width: 800px) {
-  .gallery {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* Sections */
