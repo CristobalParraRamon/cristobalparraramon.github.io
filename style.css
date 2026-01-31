@@ -6,9 +6,13 @@
   --max: 980px;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -18,8 +22,14 @@ body {
   line-height: 1.5;
 }
 
-a { color: inherit; text-decoration: none; }
-a:hover { opacity: 0.75; }
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.75;
+}
 
 /* Header */
 .header {
@@ -40,7 +50,9 @@ a:hover { opacity: 0.75; }
   justify-content: space-between;
 }
 
-.brand { font-weight: 600; }
+.brand {
+  font-weight: 600;
+}
 
 .nav {
   display: flex;
@@ -60,7 +72,9 @@ a:hover { opacity: 0.75; }
 }
 
 /* Hero */
-.hero { border-bottom: 1px solid var(--hair); }
+.hero {
+  border-bottom: 1px solid var(--hair);
+}
 
 .hero-inner {
   max-width: var(--max);
@@ -80,14 +94,22 @@ h1 {
   max-width: 60ch;
 }
 
-/* Gallery */
+/* ===== GALLERY LAYOUT ===== */
 .gallery {
   max-width: var(--max);
   margin: 0 auto;
   padding: 24px 16px 40px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
 }
 
-.item { margin-bottom: 34px; }
+/* First and last images full width */
+.gallery .item:first-child,
+.gallery .item:last-child {
+  grid-column: 1 / -1;
+}
 
 .item img {
   width: 100%;
@@ -98,11 +120,22 @@ h1 {
   background: #fafafa;
 }
 
-/* Hide captions for now (cleaner portfolio). If you want captions back, remove this. */
-figcaption { display: none; }
+/* Hide captions for clean portfolio look */
+figcaption {
+  display: none;
+}
+
+/* Mobile: single column */
+@media (max-width: 800px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* Sections */
-.section { border-top: 1px solid var(--hair); }
+.section {
+  border-top: 1px solid var(--hair);
+}
 
 .section-inner {
   max-width: var(--max);
@@ -133,4 +166,6 @@ h2 {
   color: var(--muted);
 }
 
-.top:hover { color: var(--fg); }
+.top:hover {
+  color: var(--fg);
+}
